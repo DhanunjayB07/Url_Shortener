@@ -1,6 +1,5 @@
 package com.urlshortener.model;
 
-import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,15 +15,11 @@ public class Url
     @Lob
     private String originalUrl;
     private String shortUrl;
-    private LocalDateTime creationDate;
-    private LocalDateTime expirationDate;
 
-    public Url(long id, String originalUrl, String shortUrl, LocalDateTime creationDate, LocalDateTime expirationDate) {
+    public Url(long id, String originalUrl, String shortUrl) {
         this.id = id;
         this.originalUrl = originalUrl;
         this.shortUrl= shortUrl;
-        this.creationDate = creationDate;
-        this.expirationDate = expirationDate;
     }
 
     public Url() {
@@ -54,30 +49,12 @@ public class Url
         this.shortUrl = shortUrl;
     }
 
-    public LocalDateTime getCreationDate() {
-        return creationDate;
-    }
-
-    public void setCreationDate(LocalDateTime creationDate) {
-        this.creationDate = creationDate;
-    }
-
-    public LocalDateTime getExpirationDate() {
-        return expirationDate;
-    }
-
-    public void setExpirationDate(LocalDateTime expirationDate) {
-        this.expirationDate = expirationDate;
-    }
-
-    @Override
+        @Override
     public String toString() {
         return "Url{" +
                 "id=" + id +
                 ", originalUrl='" + originalUrl + '\'' +
                 ", shortUrl='" + shortUrl + '\'' +
-                ", creationDate=" + creationDate +
-                ", expirationDate=" + expirationDate +
                 '}';
     }
 }

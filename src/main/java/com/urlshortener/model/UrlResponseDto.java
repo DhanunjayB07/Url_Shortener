@@ -1,17 +1,14 @@
 package com.urlshortener.model;
 
-import java.time.LocalDateTime;
-
 public class UrlResponseDto
 {
     private String originalUrl;
     private String shortUrl;
-    private LocalDateTime expirationDate;
 
-    public UrlResponseDto(String originalUrl, String shortUrl, LocalDateTime expirationDate) {
+    public UrlResponseDto(String originalUrl, String shortUrl) {
         this.originalUrl = originalUrl;
         this.shortUrl = shortUrl;
-        this.expirationDate = expirationDate;
+        
     }
 
     public UrlResponseDto() {
@@ -33,20 +30,12 @@ public class UrlResponseDto
         this.shortUrl = shortUrl;
     }
 
-    public LocalDateTime getExpirationDate() {
-        return expirationDate;
-    }
-
-    public void setExpirationDate(LocalDateTime expirationDate) {
-        this.expirationDate = expirationDate;
-    }
-
-    @Override
+       @Override
     public String toString() {
         return "UrlResponseDto{" +
                 "originalUrl='" + originalUrl + '\'' +
                 ", shortUrl='" + shortUrl + '\'' +
-                ", expirationDate=" + expirationDate +
+                
                 '}';
     }
 }
